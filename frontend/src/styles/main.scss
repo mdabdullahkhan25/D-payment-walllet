@@ -1,0 +1,135 @@
+@import 'bulma/css/bulma.min.css';
+
+// Variables
+$primary-color: #6200ea;
+$secondary-color: #3700b3;
+$accent-color: #03dac6;
+$danger-color: #cf6679;
+$background-color: #121212;
+$surface-color: #1e1e1e;
+$text-color: #ffffff;
+
+// Animation Keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Animation Classes
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+// Custom Utility Classes
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1) 8%,
+    rgba(255, 255, 255, 0.2) 18%,
+    rgba(255, 255, 255, 0.1) 33%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+// Custom Component Styles
+.wallet-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  color: $text-color;
+  padding: 20px;
+  margin-bottom: 20px;
+  
+  .balance {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .wallet-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+}
+
+.transaction-item {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  &.income {
+    border-left: 4px solid $accent-color;
+  }
+  
+  &.expense {
+    border-left: 4px solid $danger-color;
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .wallet-card {
+    .balance {
+      font-size: 2rem;
+    }
+  }
+} 
