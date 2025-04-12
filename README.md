@@ -37,7 +37,7 @@ A digital payment wallet application built with the MERN stack (MongoDB, Express
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/d-payment-wallet.git
+git clone https://github.com/mdabdullahkhan25/D-payment-walllet
 cd d-payment-wallet
 ```
 
